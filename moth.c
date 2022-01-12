@@ -36,15 +36,6 @@ ISR(ADC_vect){
 		rightReading = ADCH;
 	}
 
-//
-//	if (rightReading > leftReading){
-//		PORTB = (1 << RIGHT_MOTOR);
-//	}
-//	else {
-//		PORTB = (1 << LEFT_MOTOR);
-//	}
-
-
 	if (abs(rightReading - leftReading) > TURN_TOLERANCE){
 		if (rightReading < leftReading){
 			PORTB = (1 << LEFT_MOTOR);
@@ -57,7 +48,7 @@ ISR(ADC_vect){
 	else if (rightReading > ADVANCE_TOLERANCE){
 		PORTB = (1 << LEFT_MOTOR) | (1 << RIGHT_MOTOR);
 	}
-//	otherwise both motors off (both ldrs sufficiently lit and of similar light reading)
+
 	else {
 		PORTB = 0x00;
 	}
@@ -65,9 +56,7 @@ ISR(ADC_vect){
 	ADMUX = ADMUX ^ (1 << MUX1); // FLIP ADC CHANNEL
 
 	start_adc();
-
 }
-
 
 
 int main(){
