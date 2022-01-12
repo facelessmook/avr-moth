@@ -5,14 +5,14 @@ This breitenberg vehicle is designed to mimic a moth, following light. However, 
 Electricals
 ATTINY45 connected as follows:
 
-Pin 1 - PB5 - RESET - Connected to VCC
-Pin 2 - PB3 - Connected to left side voltage divider
-Pin 3 - PB4 - Connected to left side motor
-Pin 4 - GND - Connected to ground
-Pin 5 - PB0 - No connection, too many pins on this chip anyway (should really be attached to ground)
-Pin 6 - PB1 - Connected to right side motor
-Pin 7 - PB2 - Connected to right side voltage divider
-Pin 8 - VCC - Connected to VCC
+-Pin 1 - PB5 - RESET - Connected to VCC
+-Pin 2 - PB3 - Connected to left side voltage divider
+-Pin 3 - PB4 - Connected to left side motor
+-Pin 4 - GND - Connected to ground
+-Pin 5 - PB0 - No connection, too many pins on this chip anyway (should really be attached to ground)
+-Pin 6 - PB1 - Connected to right side motor
+-Pin 7 - PB2 - Connected to right side voltage divider
+-Pin 8 - VCC - Connected to VCC
 
 Voltage divider is made up of a resistor connected to VCC and LDR connected to GND. Voltage rises when the LDR is deprived of light.
 Output to motor goes through a zener diode to the gate of a mosfet. Motor connects to 6V and drain of mosfet. Source connected to ground.
